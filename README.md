@@ -1,13 +1,13 @@
 # Trivia4NET
 
-![[Trivia4NET](https://www.nuget.org/packages/Trivia4NET/1.0.0)](https://img.shields.io/nuget/vpre/Trivia4NET.svg)
+[![Trivia4NET](https://img.shields.io/nuget/vpre/Trivia4NET.svg)](https://www.nuget.org/packages/Trivia4NET/)
 
 A wrapper for the Open Trivia Database (https://opentdb.com/).
 
 ## `Getting Started`
 
 1. First install [.NET Core >= 2.0](https://dotnet.microsoft.com/download/dotnet-core/2.0) for your platform.
-2. Install the [Trivia4NET](https://www.nuget.org/packages/Trivia4NET/1.0.0) NuGet-Package.
+2. Install the [Trivia4NET](https://www.nuget.org/packages/Trivia4NET/) NuGet-Package.
 
 ___
 

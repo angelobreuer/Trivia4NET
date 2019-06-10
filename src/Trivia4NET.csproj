@@ -12,6 +12,7 @@
     <Product>Trivia4NET</Product>
     <Description>A wrapper for the Open Trivia Database (https://opentdb.com/).</Description>
     <Copyright>Angelo Breuer 2019</Copyright>
+    <Version>1.0.1</Version>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <RepositoryUrl>https://github.com/angelobreuer/Trivia4NET</RepositoryUrl>
     <PackageTags>trivia, quiz, questions, wrapper, quiz-database, trivia4net, opentriviadatabase, trivia database</PackageTags>
