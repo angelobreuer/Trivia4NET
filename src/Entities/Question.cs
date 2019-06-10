@@ -12,6 +12,7 @@
         /// <summary>
         ///     Gets the correct answer to the question.
         /// </summary>
+        [JsonConverter(typeof(HtmlEntityConverter))]
         [JsonRequired, JsonProperty("correct_answer")]
         public string Answer { get; internal set; }
 
@@ -42,7 +43,7 @@
         ///     there is only one incorrect answer, either <see langword="true"/> ("True") or
         ///     <see langword="false"/> ("False").
         /// </remarks>
-        [JsonRequired, JsonProperty("incorrect_answers")]
+        [JsonRequired, JsonProperty("incorrect_answers", ItemConverterType = typeof(HtmlEntityConverter))]
         public IReadOnlyList<string> IncorrectAnswers { get; internal set; }
 
         /// <summary>
