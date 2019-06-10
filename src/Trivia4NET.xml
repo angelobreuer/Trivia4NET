@@ -1,0 +1,584 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Trivia4NET</name>
+    </assembly>
+    <members>
+        <member name="T:Trivia4NET.Entities.CategoryStatistics">
+            <summary>
+                The strongly-typed representation of the statistics for a category.
+            </summary>
+        </member>
+        <member name="P:Trivia4NET.Entities.CategoryStatistics.TotalQuestions">
+            <summary>
+                Gets the number of total questions in the category.
+            </summary>
+        </member>
+        <member name="P:Trivia4NET.Entities.CategoryStatistics.EasyQuestions">
+            <summary>
+                Gets the number of easy (difficulty) questions in the category.
+            </summary>
+        </member>
+        <member name="P:Trivia4NET.Entities.CategoryStatistics.MediumQuestions">
+            <summary>
+                Gets the number of medium (difficulty) questions in the category.
+            </summary>
+        </member>
+        <member name="P:Trivia4NET.Entities.CategoryStatistics.HardQuestions">
+            <summary>
+                Gets the number of hard (difficulty) questions in the category.
+            </summary>
+        </member>
+        <member name="T:Trivia4NET.Entities.CompletionStatus">
+            <summary>
+                The strongly-typed representation of the completion status for a category.
+            </summary>
+        </member>
+        <member name="P:Trivia4NET.Entities.CompletionStatus.PendingQuestions">
+            <summary>
+                Gets the number of total pending questions in the category.
+            </summary>
+        </member>
+        <member name="P:Trivia4NET.Entities.CompletionStatus.Questions">
+            <summary>
+                Gets the number of total questions in the category.
+            </summary>
+        </member>
+        <member name="P:Trivia4NET.Entities.CompletionStatus.RejectedQuestions">
+            <summary>
+                Gets the number of total rejected questions in the category.
+            </summary>
+        </member>
+        <member name="P:Trivia4NET.Entities.CompletionStatus.VerifiedQuestions">
+            <summary>
+                Gets the number of total verified / accepted questions in the category.
+            </summary>
+        </member>
+        <member name="M:Trivia4NET.Entities.CompletionStatus.ToString">
+            <summary>
+                Builds a <see cref="T:System.String"/> representation of the <see cref="T:Trivia4NET.Entities.CompletionStatus"/>.
+            </summary>
+            <returns>a <see cref="T:System.String"/> representation of the <see cref="T:Trivia4NET.Entities.CompletionStatus"/></returns>
+        </member>
+        <member name="T:Trivia4NET.Entities.Difficulty">
+            <summary>
+                A set of the different difficulty levels supported by the Trivia API.
+            </summary>
+        </member>
+        <member name="F:Trivia4NET.Entities.Difficulty.Easy">
+            <summary>
+                The difficulty Easy ("easy").
+            </summary>
+        </member>
+        <member name="F:Trivia4NET.Entities.Difficulty.Medium">
+            <summary>
+                The difficulty Medium ("medium").
+            </summary>
+        </member>
+        <member name="F:Trivia4NET.Entities.Difficulty.Hard">
+            <summary>
+                The difficulty Hard ("hard").
+            </summary>
+        </member>
+        <member name="T:Trivia4NET.Entities.Question">
+            <summary>
+                The strongly-typed representation of a question.
+            </summary>
+        </member>
+        <member name="P:Trivia4NET.Entities.Question.Answer">
+            <summary>
+                Gets the correct answer to the question.
+            </summary>
+        </member>
+        <member name="P:Trivia4NET.Entities.Question.Category">
+            <summary>
+                Gets the english name of the category the question is.
+            </summary>
+        </member>
+        <member name="P:Trivia4NET.Entities.Question.Content">
+            <summary>
+                Gets the question content.
+            </summary>
+        </member>
+        <member name="P:Trivia4NET.Entities.Question.Difficulty">
+            <summary>
+                Gets the difficulty level of the question.
+            </summary>
+        </member>
+        <member name="P:Trivia4NET.Entities.Question.IncorrectAnswers">
+            <summary>
+                Gets a list of incorrect answers for the questions.
+            </summary>
+            <remarks>
+                If the question type ( <see cref="P:Trivia4NET.Entities.Question.Type"/>) is <see cref="F:Trivia4NET.Entities.QuestionType.YesNo"/> then
+                there is only one incorrect answer, either <see langword="true"/> ("True") or
+                <see langword="false"/> ("False").
+            </remarks>
+        </member>
+        <member name="P:Trivia4NET.Entities.Question.Type">
+            <summary>
+                Gets the type of the question.
+            </summary>
+        </member>
+        <member name="M:Trivia4NET.Entities.Question.ToString">
+            <summary>
+                Builds a <see cref="T:System.String"/> representation of the <see cref="T:Trivia4NET.Entities.Question"/>.
+            </summary>
+            <returns>a <see cref="T:System.String"/> representation of the <see cref="T:Trivia4NET.Entities.Question"/></returns>
+        </member>
+        <member name="T:Trivia4NET.Entities.QuestionType">
+            <summary>
+                A set of the question types returned by the Trivia API.
+            </summary>
+        </member>
+        <member name="F:Trivia4NET.Entities.QuestionType.Multiple">
+            <summary>
+                A multiple-choice questions which normally contains three wrong and one right answer.
+            </summary>
+        </member>
+        <member name="F:Trivia4NET.Entities.QuestionType.YesNo">
+            <summary>
+                A yes / no question where the answers can be only <see langword="true"/> ("True") or
+                <see langword="false"/> ("False").
+            </summary>
+        </member>
+        <member name="T:Trivia4NET.Entities.ResponseCode">
+            <summary>
+                A set of different response codes returned by the Trivia API.
+            </summary>
+        </member>
+        <member name="F:Trivia4NET.Entities.ResponseCode.Success">
+            <summary>
+                Indicates that the results were returned successfully.
+            </summary>
+        </member>
+        <member name="F:Trivia4NET.Entities.ResponseCode.NoResults">
+            <summary>
+                Indicates that the api does not have enough questions for the query.
+            </summary>
+        </member>
+        <member name="F:Trivia4NET.Entities.ResponseCode.InvalidParameter">
+            <summary>
+                Indicates that the passed query parameters are invalid.
+            </summary>
+        </member>
+        <member name="F:Trivia4NET.Entities.ResponseCode.TokenNotFound">
+            <summary>
+                Indicates that the specified session token was not found.
+            </summary>
+        </member>
+        <member name="F:Trivia4NET.Entities.ResponseCode.TokenEmpty">
+            <summary>
+                Indicates that there are no questions for the specified query and token.
+            </summary>
+        </member>
+        <member name="T:Trivia4NET.Entities.TriviaCategory">
+            <summary>
+                The strongly-typed representation of a Trivia API category.
+            </summary>
+        </member>
+        <member name="P:Trivia4NET.Entities.TriviaCategory.Id">
+            <summary>
+                Gets the unique identifier of the category.
+            </summary>
+        </member>
+        <member name="P:Trivia4NET.Entities.TriviaCategory.Name">
+            <summary>
+                Gets the english name of the category.
+            </summary>
+        </member>
+        <member name="M:Trivia4NET.Entities.TriviaCategory.ToString">
+            <summary>
+                Builds a <see cref="T:System.String"/> representation of the <see cref="T:Trivia4NET.Entities.TriviaCategory"/>.
+            </summary>
+            <returns>a <see cref="T:System.String"/> representation of the <see cref="T:Trivia4NET.Entities.TriviaCategory"/></returns>
+        </member>
+        <member name="T:Trivia4NET.Payloads.CategoryResponse">
+            <summary>
+                The strongly-typed representation of the response of the "api_category.php" api endpoint.
+            </summary>
+        </member>
+        <member name="P:Trivia4NET.Payloads.CategoryResponse.Categories">
+            <summary>
+                Gets the questions returned in the response.
+            </summary>
+        </member>
+        <member name="T:Trivia4NET.Payloads.CategoryStatisticsResponse">
+            <summary>
+                The strongly-typed representation of the response of the "api_count.php" api endpoint.
+            </summary>
+        </member>
+        <member name="P:Trivia4NET.Payloads.CategoryStatisticsResponse.CategoryId">
+            <summary>
+                Gets the category identifier.
+            </summary>
+        </member>
+        <member name="P:Trivia4NET.Payloads.CategoryStatisticsResponse.Statistics">
+            <summary>
+                Gets the statistics for the category.
+            </summary>
+        </member>
+        <member name="T:Trivia4NET.Payloads.QuestionsResponse">
+            <summary>
+                The strongly-typed representation of the response of the "api.php" api endpoint.
+            </summary>
+        </member>
+        <member name="P:Trivia4NET.Payloads.QuestionsResponse.Questions">
+            <summary>
+                Gets the questions returned in the response.
+            </summary>
+        </member>
+        <member name="T:Trivia4NET.Payloads.StatisticsResponse">
+            <summary>
+                The strongly-typed representation of the response of the "api_count_global.php" api endpoint.
+            </summary>
+        </member>
+        <member name="P:Trivia4NET.Payloads.StatisticsResponse.Overall">
+            <summary>
+                Gets the overall completion of all categories.
+            </summary>
+        </member>
+        <member name="P:Trivia4NET.Payloads.StatisticsResponse.CategoryStates">
+            <summary>
+                Gets the completions states for all available categories. The key is the identifier
+                number of the category ( <see cref="P:Trivia4NET.Entities.TriviaCategory.Id"/>). The value the completion
+                status of the category.
+            </summary>
+        </member>
+        <member name="T:Trivia4NET.Payloads.TokenResponse">
+            <summary>
+                The response for the token endpoint.
+            </summary>
+        </member>
+        <member name="P:Trivia4NET.Payloads.TokenResponse.ResponseMessage">
+            <summary>
+                Gets the response message, on failure this can contain a helpful message.
+            </summary>
+        </member>
+        <member name="P:Trivia4NET.Payloads.TokenResponse.SessionToken">
+            <summary>
+                Gets the session token.
+            </summary>
+        </member>
+        <member name="T:Trivia4NET.Payloads.TriviaResponse">
+            <summary>
+                The base implementation of a response from the Trivia API.
+            </summary>
+        </member>
+        <member name="P:Trivia4NET.Payloads.TriviaResponse.ResponseCode">
+            <summary>
+                Gets the response code that was returned by the Trivia API.
+            </summary>
+        </member>
+        <member name="T:Trivia4NET.TriviaOptions">
+            <summary>
+                The options for the <see cref="T:Trivia4NET.TriviaService"/>.
+            </summary>
+        </member>
+        <member name="P:Trivia4NET.TriviaOptions.BaseAddress">
+            <summary>
+                Gets or sets the Trivia API endpoint.
+            </summary>
+        </member>
+        <member name="P:Trivia4NET.TriviaOptions.UserAgent">
+            <summary>
+                Gets or sets the user-agent for making requests to the Trivia API.
+            </summary>
+        </member>
+        <member name="P:Trivia4NET.TriviaOptions.AutoResetToken">
+            <summary>
+                Gets a value indicating whether the token should be auto-reseted when it's empty (
+                <see langword="true"/>), or an exception should be thrown ( <see langword="false"/>).
+                This property defaults to <see langword="true"/>.
+            </summary>
+        </member>
+        <member name="T:Trivia4NET.TriviaService">
+            <summary>
+                A service for making requests to the Trivia API.
+            </summary>
+        </member>
+        <member name="M:Trivia4NET.TriviaService.#ctor">
+            <summary>
+                Initializes a new instance of the <see cref="T:Trivia4NET.TriviaService"/> class using the default <see cref="T:Trivia4NET.TriviaOptions"/>.
+            </summary>
+        </member>
+        <member name="M:Trivia4NET.TriviaService.#ctor(Trivia4NET.TriviaOptions)">
+            <summary>
+                Initializes a new instance of the <see cref="T:Trivia4NET.TriviaService"/> class.
+            </summary>
+            <param name="options">the options for the service</param>
+            <exception cref="T:System.ArgumentNullException">
+                thrown if the specified <paramref name="options"/> parameter is <see langword="null"/>.
+            </exception>
+        </member>
+        <member name="M:Trivia4NET.TriviaService.Dispose">
+            <summary>
+                Disposes the underlying HTTP client.
+            </summary>
+        </member>
+        <member name="M:Trivia4NET.TriviaService.GetCategoriesAsync(System.Threading.CancellationToken)">
+            <summary>
+                Gets all available categories asynchronously.
+            </summary>
+            <param name="cancellationToken">
+                a cancellation token used to propagate notification that the asynchronous operation
+                should be canceled.
+            </param>
+            <returns>
+                a task that represents the asynchronous operation. The task result is the response
+                received from the Trivia API endpoint.
+            </returns>
+        </member>
+        <member name="M:Trivia4NET.TriviaService.GetQuestionsAsync(System.String,System.Int32,System.Nullable{Trivia4NET.Entities.Difficulty},System.Nullable{Trivia4NET.Entities.QuestionType},System.Nullable{System.Int32},System.Threading.CancellationToken)">
+            <summary>
+                Gets questions from the Trivia API asynchronously.
+            </summary>
+            <param name="token">
+                a token (that was returned from <see cref="M:Trivia4NET.TriviaService.RequestTokenAsync(System.Threading.CancellationToken)"/>),
+                which can be used to distinct the returned questions, so that no duplicate questions
+                are returned.
+            </param>
+            <param name="amount">the amount of questions to return (maximum: 50 questions)</param>
+            <param name="difficulty">the difficulty the questions should have</param>
+            <param name="type">
+                the type of the question (either <see cref="F:Trivia4NET.Entities.QuestionType.YesNo"/> or <see cref="F:Trivia4NET.Entities.QuestionType.Multiple"/>).
+            </param>
+            <param name="categoryId">
+                the identifier of the category ( <see cref="P:Trivia4NET.Entities.TriviaCategory.Id"/>) to return questions
+                from, if <see langword="null"/> a random category will be chosen for the questions.
+            </param>
+            <param name="cancellationToken">
+                a cancellation token used to propagate notification that the asynchronous operation
+                should be canceled.
+            </param>
+            <returns>
+                a task that represents the asynchronous operation. The task result is the response
+                received from the Trivia API endpoint.
+            </returns>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+                thrown if the specified <paramref name="amount"/> is greater than 50.
+            </exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+                thrown if the specified <paramref name="amount"/> is less than 1.
+            </exception>
+        </member>
+        <member name="M:Trivia4NET.TriviaService.GetStatisticsAsync(System.Int32,System.Threading.CancellationToken)">
+            <summary>
+                Gets the statistics for the category specified by <paramref name="categoryId"/> asynchronously.
+            </summary>
+            <param name="categoryId">the identifier of the category to get the questions for</param>
+            <param name="cancellationToken">
+                a cancellation token used to propagate notification that the asynchronous operation
+                should be canceled.
+            </param>
+            <returns>
+                a task that represents the asynchronous operation. The task result is the response
+                received from the Trivia API endpoint.
+            </returns>
+        </member>
+        <member name="M:Trivia4NET.TriviaService.GetStatisticsAsync(Trivia4NET.Entities.TriviaCategory,System.Threading.CancellationToken)">
+            <summary>
+                Gets the statistics for the specified <paramref name="category"/> asynchronously.
+            </summary>
+            <param name="category">the category to get the questions for</param>
+            <param name="cancellationToken">
+                a cancellation token used to propagate notification that the asynchronous operation
+                should be canceled.
+            </param>
+            <returns>
+                a task that represents the asynchronous operation. The task result is the response
+                received from the Trivia API endpoint.
+            </returns>
+        </member>
+        <member name="M:Trivia4NET.TriviaService.GetStatisticsAsync(System.Threading.CancellationToken)">
+            <summary>
+                Gets the global statistics (overall and foreach category) asynchronously.
+            </summary>
+            <param name="cancellationToken">
+                a cancellation token used to propagate notification that the asynchronous operation
+                should be canceled.
+            </param>
+            <returns>
+                a task that represents the asynchronous operation. The task result is the response
+                received from the Trivia API endpoint.
+            </returns>
+        </member>
+        <member name="M:Trivia4NET.TriviaService.PaginateQuestions(System.String,System.Int32,System.Nullable{Trivia4NET.Entities.Difficulty},System.Nullable{Trivia4NET.Entities.QuestionType},System.Nullable{System.Int32})">
+            <summary>
+                Creates an asynchronous enumerator for question pagination.
+            </summary>
+            <param name="token">
+                a token (that was returned from <see cref="M:Trivia4NET.TriviaService.RequestTokenAsync(System.Threading.CancellationToken)"/>),
+                which can be used to distinct the returned questions, so that no duplicate questions
+                are returned.
+            </param>
+            <param name="pageSize">
+                the amount of questions to return per page (maximum: 50 questions)
+            </param>
+            <param name="difficulty">the difficulty the questions should have</param>
+            <param name="type">
+                the type of the question (either <see cref="F:Trivia4NET.Entities.QuestionType.YesNo"/> or <see cref="F:Trivia4NET.Entities.QuestionType.Multiple"/>).
+            </param>
+            <param name="categoryId">
+                the identifier of the category ( <see cref="P:Trivia4NET.Entities.TriviaCategory.Id"/>) to return questions
+                from, if <see langword="null"/> a random category will be chosen for the questions.
+            </param>
+            <returns>an asynchronous enumerator for question pagination</returns>
+        </member>
+        <member name="M:Trivia4NET.TriviaService.RequestTokenAsync(System.Threading.CancellationToken)">
+            <summary>
+                Requests a new session token asynchronously.
+            </summary>
+            <param name="cancellationToken">
+                a cancellation token used to propagate notification that the asynchronous operation
+                should be canceled.
+            </param>
+            <returns>
+                a task that represents the asynchronous operation. The task result is the response
+                received from the Trivia API endpoint.
+            </returns>
+        </member>
+        <member name="M:Trivia4NET.TriviaService.ResetTokenAsync(System.String,System.Threading.CancellationToken)">
+            <summary>
+                Requests to reset the specified <paramref name="token"/> asynchronously.
+            </summary>
+            <param name="token">the token to reset</param>
+            <param name="cancellationToken">
+                a cancellation token used to propagate notification that the asynchronous operation
+                should be canceled.
+            </param>
+            <returns>
+                a task that represents the asynchronous operation. The task result is the response
+                received from the Trivia API endpoint.
+            </returns>
+        </member>
+        <member name="M:Trivia4NET.TriviaService.RequestAsync``1(System.String,System.Threading.CancellationToken)">
+            <summary>
+                Sends a request and validates and deserializes its response asynchronously.
+            </summary>
+            <typeparam name="TResponse">
+                the type of the strongly-typed representation of the response payload
+            </typeparam>
+            <param name="endpoint">the relative URI endpoint (relative to <see cref="P:Trivia4NET.TriviaOptions.BaseAddress"/>)</param>
+            <param name="cancellationToken">
+                a cancellation token used to propagate notification that the asynchronous operation
+                should be canceled.
+            </param>
+            <returns>
+                a task that represents the asynchronous operation. The task result is the response
+                received from the Trivia API endpoint.
+            </returns>
+        </member>
+        <member name="T:Trivia4NET.Util.EnumUtils">
+            <summary>
+                An utility class for getting the serialized version of an enumeration.
+            </summary>
+        </member>
+        <member name="M:Trivia4NET.Util.EnumUtils.GetSerializedValue(System.Enum)">
+            <summary>
+                Gets the serialized enumeration member value ( <see cref="T:System.Runtime.Serialization.EnumMemberAttribute"/>) for
+                the specified enumeration <paramref name="value"/>.
+            </summary>
+            <remarks>
+                If no <see cref="T:System.Runtime.Serialization.EnumMemberAttribute"/> is applied to the enumeration value, the
+                <see cref="M:System.Object.ToString"/> method is used.
+            </remarks>
+            <param name="value">the enumeration value</param>
+            <returns>
+                the serialized representation ( <see cref="T:System.Runtime.Serialization.EnumMemberAttribute"/>) of the specified
+                enumeration <paramref name="value"/>
+            </returns>
+        </member>
+        <member name="T:Trivia4NET.Util.HtmlEntityConverter">
+            <summary>
+                A <see cref="T:Newtonsoft.Json.JsonConverter"/> for the serialization and deserialization for HTML encoded strings.
+            </summary>
+        </member>
+        <member name="M:Trivia4NET.Util.HtmlEntityConverter.ReadJson(Newtonsoft.Json.JsonReader,System.Type,System.String,System.Boolean,Newtonsoft.Json.JsonSerializer)">
+            <summary>
+                Reads the JSON representation of the object.
+            </summary>
+            <param name="reader">The Newtonsoft.Json.JsonReader to read from.</param>
+            <param name="objectType">Type of the object.</param>
+            <param name="existingValue">
+                The existing value of object being read. If there is no existing value then null will
+                be used.
+            </param>
+            <param name="hasExistingValue">The existing value has a value.</param>
+            <param name="serializer">The calling serializer.</param>
+            <returns>The object value.</returns>
+        </member>
+        <member name="M:Trivia4NET.Util.HtmlEntityConverter.WriteJson(Newtonsoft.Json.JsonWriter,System.String,Newtonsoft.Json.JsonSerializer)">
+            <summary>
+                Writes the JSON representation of the object.
+            </summary>
+            <param name="writer">The Newtonsoft.Json.JsonWriter to write to.</param>
+            <param name="value">The value.</param>
+            <param name="serializer">The calling serializer.</param>
+        </member>
+        <member name="T:Trivia4NET.Util.PaginatedEnumerator`1">
+            <summary>
+                A wrapper for an asynchronous enumerator.
+            </summary>
+            <typeparam name="T">the enumeration type</typeparam>
+            <remarks>
+                Adapted from https://gist.github.com/angelobreuer/46f776f31a289e097a74aecdc966755f (PaginatedEnumerator.cs)
+            </remarks>
+        </member>
+        <member name="M:Trivia4NET.Util.PaginatedEnumerator`1.#ctor(System.Func{System.Threading.Tasks.Task{`0[]}})">
+            <summary>
+                Initializes a new instance of the <see cref="T:Trivia4NET.Util.PaginatedEnumerator`1"/> class.
+            </summary>
+            <param name="requestFunc">the callback for asynchronously retrieving the new entries</param>
+        </member>
+        <member name="P:Trivia4NET.Util.PaginatedEnumerator`1.Current">
+            <summary>
+                Gets the current item.
+            </summary>
+        </member>
+        <member name="P:Trivia4NET.Util.PaginatedEnumerator`1.CurrentPage">
+            <summary>
+                Gets the number of the current page.
+            </summary>
+        </member>
+        <member name="P:Trivia4NET.Util.PaginatedEnumerator`1.HasReachedEnd">
+            <summary>
+                Gets a value indicating whether the end has been reached.
+            </summary>
+        </member>
+        <member name="P:Trivia4NET.Util.PaginatedEnumerator`1.ItemsAvailable">
+            <summary>
+                Gets a value indicating whether any items are available or whether the next page
+                should be requested.
+            </summary>
+        </member>
+        <member name="P:Trivia4NET.Util.PaginatedEnumerator`1.ItemsRemaining">
+            <summary>
+                Gets the number of items remaining in the current page.
+            </summary>
+        </member>
+        <member name="P:Trivia4NET.Util.PaginatedEnumerator`1.PageItemCount">
+            <summary>
+                Gets the number of items the current page contains.
+            </summary>
+        </member>
+        <member name="M:Trivia4NET.Util.PaginatedEnumerator`1.Dispose">
+            <summary>
+                Does absolutely nothing.
+            </summary>
+        </member>
+        <member name="M:Trivia4NET.Util.PaginatedEnumerator`1.MoveNext(System.Threading.CancellationToken)">
+            <summary>
+                Moves to the next item asynchronously.
+            </summary>
+            <param name="cancellationToken">
+                a cancellation token used to propagate notification that the asynchronous operation
+                should be canceled.
+            </param>
+            <returns>
+                a task that represents the asynchronous operation. The task result is a value
+                indicating whether an item could be get.
+            </returns>
+        </member>
+    </members>
+</doc>
